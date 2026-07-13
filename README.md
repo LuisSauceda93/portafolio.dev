@@ -1,59 +1,72 @@
-# Portafolio
+# Portafolio de Luis Sauceda
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Portafolio personal desarrollado con Angular para mostrar mi perfil como Full-Stack Developer, proyectos destacados, experiencia técnica y canales de contacto para reclutadores y clientes.
 
-## Development server
+## Demo
 
-To start a local development server, run:
+- Sitio en vivo: `https://luissauceda93.github.io/portafolio/`
 
-```bash
-ng serve
-```
+## Capturas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Desktop: agrega una captura del layout principal
+- Mobile: agrega una captura del menú lateral y la vista móvil
 
-## Code scaffolding
+## Características
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Hero principal con propuesta de valor
+- Navegación fija en desktop
+- Menú lateral en móvil
+- Sección de tecnologías por áreas
+- Proyectos destacados con enfoque en impacto
+- Resumen de experiencia profesional
+- Llamados a la acción para contacto y CV
 
-```bash
-ng generate component component-name
-```
+## Tecnologías
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Angular
+- TypeScript
+- SCSS
+- HTML5
+- GitHub Pages
 
-```bash
-ng generate --help
-```
+## Requisitos
 
-## Building
+- Node.js
+- npm
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Instalación local
 
 ```bash
-ng test
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+Luego abre `http://localhost:4200/`.
 
-For end-to-end (e2e) testing, run:
+## Scripts disponibles
 
 ```bash
-ng e2e
+npm start
+npm run build
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Estructura general
 
-## Additional Resources
+- `src/app/app.component.ts`: datos y estado de la vista
+- `src/app/app.component.html`: estructura principal del portafolio
+- `src/app/app.component.scss`: estilos de la landing
+- `src/styles.scss`: estilos globales
+- `src/index.html`: metadatos y título de la página
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Contacto
+
+- GitHub: `LuisSauceda93`
+- LinkedIn: `www.linkedin.com/in/luissauceda`
+- Correo: `luigalberto9380@gmail.com`
+
+## Perfil
+
+Desarrollador Full-Stack con más de 8 años de experiencia en aplicaciones web, móviles, APIs REST e integraciones empresariales.
+
+Busco oportunidades donde pueda aportar en productos con impacto real, buena arquitectura y foco en negocio.

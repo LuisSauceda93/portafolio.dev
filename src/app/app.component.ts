@@ -46,6 +46,7 @@ type CareerItem = {
 })
 export class AppComponent {
   title = 'Luis Sauceda';
+  isMobileMenuOpen = false;
 
   readonly navItems: NavItem[] = [
     { label: 'Inicio', href: '#inicio' },
@@ -149,4 +150,12 @@ export class AppComponent {
       points: ['Entrega iterativa', 'Documentación técnica', 'Acompañamiento a usuarios']
     }
   ];
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
 }

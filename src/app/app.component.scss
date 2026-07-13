@@ -142,6 +142,182 @@
   background: rgba(37, 99, 235, 0.16);
 }
 
+.menu-toggle {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-left: auto;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.36);
+  color: #e2e8f0;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(96, 165, 250, 0.42);
+  background: rgba(37, 99, 235, 0.14);
+}
+
+.menu-toggle span {
+  position: absolute;
+  width: 1.15rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.menu-toggle span:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.menu-toggle span:nth-child(2) {
+  width: 0.85rem;
+}
+
+.menu-toggle span:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.mobile-backdrop,
+.mobile-drawer {
+  display: none;
+}
+
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 24;
+  width: 100%;
+  border: 0;
+  background: rgba(2, 6, 23, 0.62);
+  backdrop-filter: blur(2px);
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(86vw, 330px);
+  max-height: calc(100vh - 32px);
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 36%),
+    rgba(6, 11, 25, 0.96);
+  box-shadow: 0 30px 70px rgba(2, 6, 23, 0.55);
+  transform: translateX(calc(100% + 24px));
+  transition: transform 220ms ease;
+  overflow: auto;
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand-drawer {
+  flex: 1;
+}
+
+.drawer-close {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.36);
+  cursor: pointer;
+}
+
+.drawer-close span {
+  position: absolute;
+  width: 1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.drawer-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.drawer-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.drawer-nav {
+  display: grid;
+  gap: 10px;
+}
+
+.drawer-link {
+  padding: 12px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+  color: #e2e8f0;
+  text-decoration: none;
+  background: rgba(15, 23, 42, 0.34);
+}
+
+.drawer-link:hover,
+.drawer-link:focus-visible {
+  border-color: rgba(96, 165, 250, 0.38);
+  background: rgba(37, 99, 235, 0.14);
+}
+
+.drawer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.drawer-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 999px;
+  color: rgba(226, 232, 240, 0.92);
+  text-decoration: none;
+  background: rgba(15, 23, 42, 0.34);
+}
+
+.drawer-chip:hover,
+.drawer-chip:focus-visible {
+  border-color: rgba(96, 165, 250, 0.38);
+  background: rgba(37, 99, 235, 0.14);
+}
+
+.drawer-cta {
+  width: 100%;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
@@ -774,14 +950,25 @@
   }
 
   .topbar {
-    grid-template-columns: 1fr;
-    justify-items: stretch;
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
   }
 
   .nav,
   .social-links {
-    justify-content: flex-start;
+    display: none;
+  }
+
+  .menu-toggle,
+  .mobile-backdrop,
+  .mobile-drawer {
+    display: flex;
+  }
+
+  .mobile-backdrop {
+    align-items: stretch;
+    justify-content: stretch;
   }
 
   .hero,
