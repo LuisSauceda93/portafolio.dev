@@ -153,9 +153,47 @@
       @for (group of techGroups; track group.title) {
         <article class="tech-group">
           <h3>{{ group.title }}</h3>
-          <div class="chips">
-            @for (item of group.items; track item) {
-              <span class="chip">{{ item }}</span>
+          <div class="tech-items">
+            @for (item of group.items; track item.name) {
+              <div
+                class="tech-card"
+                [class.tech-card--wide]="item.wide"
+                [class.tech-card--wordmark]="item.wordmark"
+                [style.--tone]="item.tone"
+              >
+                <span
+                  class="tech-icon-shell"
+                  [class.tech-icon-shell--light]="item.lightSurface"
+                  [class.tech-icon-shell--wordmark]="item.wordmark"
+                  aria-hidden="true"
+                >
+                  @if (item.name === 'Power BI') {
+                    <svg
+                      class="tech-logo tech-logo--powerbi"
+                      viewBox="0 0 128 128"
+                      role="img"
+                      [attr.aria-label]="item.iconAlt || item.name"
+                      [style.color]="item.tone"
+                    >
+                      <rect x="18" y="68" width="18" height="36" rx="6" fill="currentColor" opacity=".92"></rect>
+                      <rect x="44" y="54" width="18" height="50" rx="6" fill="currentColor" opacity=".84"></rect>
+                      <rect x="70" y="40" width="18" height="64" rx="6" fill="currentColor" opacity=".76"></rect>
+                      <rect x="96" y="26" width="14" height="78" rx="6" fill="currentColor" opacity=".68"></rect>
+                      <path d="M16 104h92" stroke="currentColor" stroke-opacity=".18" stroke-width="6" stroke-linecap="round"></path>
+                    </svg>
+                  } @else if (item.icon) {
+                    <img
+                      class="tech-logo"
+                      [src]="item.icon"
+                      [alt]="item.iconAlt || item.name"
+                      loading="lazy"
+                    >
+                  } @else {
+                    <span class="tech-icon-fallback">{{ item.badge }}</span>
+                  }
+                </span>
+                <span class="tech-name">{{ item.name }}</span>
+              </div>
             }
           </div>
         </article>

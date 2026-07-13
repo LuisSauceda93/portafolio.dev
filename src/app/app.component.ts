@@ -15,9 +15,20 @@ type Metric = {
   label: string;
 };
 
+type TechItem = {
+  name: string;
+  icon?: string;
+  iconAlt?: string;
+  badge?: string;
+  tone: string;
+  wide?: boolean;
+  lightSurface?: boolean;
+  wordmark?: boolean;
+};
+
 type TechGroup = {
   title: string;
-  items: string[];
+  items: TechItem[];
 };
 
 type Project = {
@@ -72,19 +83,55 @@ export class AppComponent {
   readonly techGroups: TechGroup[] = [
     {
       title: 'Frontend',
-      items: ['Angular', 'Ionic', 'TypeScript', 'JavaScript']
+      items: [
+        { name: 'Angular', icon: 'images/stack-icons/angular.svg', iconAlt: 'Angular', tone: '#dd0031' },
+        { name: 'Ionic', icon: 'images/stack-icons/ionic.svg', iconAlt: 'Ionic', tone: '#4f8cff' },
+        { name: 'TypeScript', icon: 'images/stack-icons/typescript.svg', iconAlt: 'TypeScript', tone: '#3178c6' },
+        { name: 'JavaScript', icon: 'images/stack-icons/javascript.svg', iconAlt: 'JavaScript', tone: '#f7df1e' }
+      ]
     },
     {
       title: 'Backend',
-      items: ['Laravel', 'PHP', 'Spring Boot', 'Node.js']
+      items: [
+        { name: 'Laravel', icon: 'images/stack-icons/laravel.svg', iconAlt: 'Laravel', tone: '#ff2d20' },
+        { name: 'PHP', icon: 'images/stack-icons/php.svg', iconAlt: 'PHP', tone: '#787cb5' },
+        { name: 'Spring Boot', icon: 'images/stack-icons/spring.svg', iconAlt: 'Spring Boot', tone: '#6db33f' },
+        { name: 'Node.js', icon: 'images/stack-icons/nodejs.svg', iconAlt: 'Node.js', tone: '#68a063' }
+      ]
     },
     {
       title: 'Datos',
-      items: ['PostgreSQL', 'MySQL', 'SQL Server', 'Power BI']
+      items: [
+        { name: 'PostgreSQL', icon: 'images/stack-icons/postgresql.svg', iconAlt: 'PostgreSQL', tone: '#336791' },
+        { name: 'MySQL', icon: 'images/stack-icons/mysql.svg', iconAlt: 'MySQL', tone: '#4479a1' },
+        {
+          name: 'SQL Server',
+          icon: 'images/stack-icons/microsoftsqlserver.svg',
+          iconAlt: 'Microsoft SQL Server',
+          tone: '#cc2927'
+        },
+        { name: 'Power BI', icon: 'images/stack-icons/powerbi.svg', iconAlt: 'Power BI', tone: '#f2c811' }
+      ]
     },
     {
       title: 'Infraestructura',
-      items: ['Docker', 'AWS', 'CI/CD', 'Linux']
+      items: [
+        { name: 'Docker', icon: 'images/stack-icons/docker.svg', iconAlt: 'Docker', tone: '#2496ed' },
+        {
+          name: 'AWS',
+          icon: 'images/stack-icons/amazonwebservices.svg',
+          iconAlt: 'Amazon Web Services',
+          tone: '#ff9900',
+          wordmark: true
+        },
+        {
+          name: 'GitHub Actions',
+          icon: 'images/stack-icons/githubactions.svg',
+          iconAlt: 'GitHub Actions',
+          tone: '#2088ff'
+        },
+        { name: 'Linux', icon: 'images/stack-icons/linux.svg', iconAlt: 'Linux', tone: '#f7b500' }
+      ]
     }
   ];
 

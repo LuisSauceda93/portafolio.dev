@@ -619,6 +619,100 @@
   font-size: 1.02rem;
 }
 
+.tech-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tech-card {
+  --logo-size: 72px;
+  --logo-height: 72px;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 16px 12px 15px;
+  min-height: 142px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--tone) 20%, transparent), transparent 62%),
+    rgba(15, 23, 42, 0.34);
+  text-align: center;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.tech-card--wide {
+  --logo-size: 108px;
+  --logo-height: 54px;
+  grid-column: span 2;
+  min-height: 132px;
+}
+
+.tech-card--wordmark {
+  min-height: 132px;
+}
+
+.tech-card:hover,
+.tech-card:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.32);
+}
+
+.tech-icon-shell {
+  display: grid;
+  place-items: center;
+  width: var(--logo-size);
+  height: var(--logo-height);
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--tone) 18%, rgba(15, 23, 42, 0.9));
+  border: 1px solid color-mix(in srgb, var(--tone) 38%, rgba(148, 163, 184, 0.16));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.tech-icon-shell--wordmark {
+  /*width: min(100%, 118px);
+  height: 52px;*/
+}
+
+.tech-icon-shell--light {
+  background: rgba(248, 250, 252, 0.96);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.tech-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.tech-logo--powerbi {
+  width: 100%;
+  height: 100%;
+}
+
+.tech-icon-fallback {
+  color: color-mix(in srgb, var(--tone) 86%, white 14%);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.tech-name {
+  color: rgba(226, 232, 240, 0.94);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -992,6 +1086,19 @@
   .project-grid,
   .about-panel {
     grid-template-columns: 1fr;
+  }
+
+  .tech-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tech-card--wide {
+    --logo-size: 100%;
+    --logo-height: 54px;
+  }
+
+  .tech-card--wordmark {
+    min-height: 126px;
   }
 
   .portrait-card {
