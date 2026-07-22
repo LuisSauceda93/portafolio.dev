@@ -68,9 +68,9 @@ export class AppComponent {
   ];
 
   readonly socialLinks: SocialLink[] = [
-    { label: 'GitHub', href: 'https://github.com/tu-usuario' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/tu-perfil' },
-    { label: 'Correo', href: 'mailto:tu-correo@dominio.com' }
+    { label: 'GitHub', href: 'https://github.com/LuisSauceda93' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/luissauceda' },
+    { label: 'Correo', href: 'mailto:luigalberto9380@gmail.com' }
   ];
 
   readonly metrics: Metric[] = [
